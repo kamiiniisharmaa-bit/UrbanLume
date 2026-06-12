@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>UrbanLume · Terms of Service | Legal agreement</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, 'Segoe UI', 'Inter', -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+      background: #fefcf7;
+      color: #1e1e2a;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* header identical to homepage for brand consistency */
+    .site-header {
+      background: #ffffffea;
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #e9e7e0;
+      padding: 18px 0;
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .logo h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      background: linear-gradient(135deg, #2C3E4E, #D4AF37);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .logo span {
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: #6c757d;
+      display: block;
+      background: none;
+      -webkit-background-clip: unset;
+      color: #5a626e;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #2d3e50;
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #d4af37;
+    }
+
+    /* terms hero */
+    .terms-hero {
+      background: linear-gradient(115deg, #f2efe7 0%, #ffffff 100%);
+      border-radius: 48px;
+      margin: 40px 0 32px 0;
+      padding: 48px 48px;
+      text-align: center;
+    }
+
+    .terms-hero h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #2c3e4e;
+      margin-bottom: 16px;
+    }
+
+    .terms-hero p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+      color: #4a5b6e;
+    }
+
+    .last-updated {
+      margin-top: 20px;
+      font-size: 0.85rem;
+      background: #e9e2d4;
+      display: inline-block;
+      padding: 6px 18px;
+      border-radius: 60px;
+      color: #2c3e4e;
+    }
+
+    /* terms content card */
+    .terms-card {
+      background: white;
+      border-radius: 40px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.04);
+      padding: 48px 52px;
+      margin: 24px 0 64px;
+      border: 1px solid #f0ece3;
+    }
+
+    .terms-section {
+      margin-bottom: 40px;
+      scroll-margin-top: 100px;
+    }
+
+    .terms-section h2 {
+      font-size: 1.7rem;
+      font-weight: 600;
+      margin-bottom: 18px;
+      color: #2c3e4e;
+      border-left: 5px solid #d4af37;
+      padding-left: 18px;
+    }
+
+    .terms-section h3 {
+      font-size: 1.2rem;
+      margin: 24px 0 10px 0;
+      font-weight: 600;
+      color: #3e4c5c;
+    }
+
+    .terms-section p, .terms-section li {
+      color: #2d3a48;
+      margin-bottom: 14px;
+      line-height: 1.6;
+    }
+
+    .terms-section ul, .terms-section ol {
+      margin: 12px 0 16px 32px;
+    }
+
+    .terms-section li {
+      margin-bottom: 8px;
+    }
+
+    hr {
+      margin: 32px 0;
+      border: 0;
+      height: 1px;
+      background: linear-gradient(90deg, #e0d9cd, transparent);
+    }
+
+    .back-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #f4f1ea;
+      padding: 12px 28px;
+      border-radius: 60px;
+      text-decoration: none;
+      color: #2c3e4e;
+      font-weight: 500;
+      transition: 0.2s;
+      margin-top: 20px;
+    }
+
+    .back-home:hover {
+      background: #e9e2d4;
+      gap: 16px;
+    }
+
+    /* footer */
+    .site-footer {
+      border-top: 1px solid #e9e2d4;
+      padding: 48px 0 32px;
+      margin-top: 24px;
+      background: #fefaf4;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+    }
+
+    .footer-col h4 {
+      margin-bottom: 18px;
+      font-weight: 600;
+    }
+
+    .footer-col p, .footer-col a {
+      color: #5f6c7a;
+      text-decoration: none;
+      line-height: 1.8;
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 48px;
+      color: #7c7f85;
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 780px) {
+      .terms-card {
+        padding: 32px 24px;
+      }
+      .terms-hero h1 {
+        font-size: 2rem;
+      }
+      .terms-hero {
+        padding: 32px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">
+      <h1>UrbanLume<span> · luminous living</span></h1>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="about.html">About Us</a>
+      <a href="#" class="cart-icon" style="background:#f5f2eb; padding:8px 16px; border-radius:40px;">🛒 Cart (0)</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <!-- Terms hero section -->
+    <div class="terms-hero">
+      <h1>Terms of Service</h1>
+      <p>Welcome to UrbanLume. These terms govern your use of our website, purchases, and relationship with our luminous community.</p>
+      <div class="last-updated">📅 Last updated: June 12, 2026</div>
+    </div>
+
+    <!-- Main legal content block -->
+    <div class="terms-card">
+      <div class="terms-section" id="agreement">
+        <h2>1. Agreement to Terms</h2>
+        <p>By accessing or using the UrbanLume website (the "Site"), you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree with any part of these terms, you must not use our services. UrbanLume ("we", "us", "our") reserves the right to update or modify these Terms at any time without prior notice. Your continued use of the Site after changes constitutes acceptance of the new Terms.</p>
+      </div>
+
+      <div class="terms-section" id="products">
+        <h2>2. Products & Purchases</h2>
+        <p>All products displayed on UrbanLume — including pendant lamps, floor lamps, sconces, and limited collections — are subject to availability. We strive to display accurate colors, dimensions, and materials, but slight variations may occur due to handcrafted processes or screen settings.</p>
+        <h3>Pricing & Payment</h3>
+        <p>Prices are listed in USD and do not include applicable taxes or shipping fees, which will be added at checkout. UrbanLume accepts major credit cards and digital wallets. We reserve the right to correct any pricing errors and to cancel orders arising from such errors.</p>
+        <h3>Order Acceptance</h3>
+        <p>After placing an order, you will receive an order confirmation email. This email does not guarantee acceptance; we may cancel or limit quantities for any reason. In case of cancellation, we will refund the full amount.</p>
+      </div>
+
+      <div class="terms-section" id="shipping">
+        <h2>3. Shipping & Returns</h2>
+        <p>We ship worldwide to most regions. Estimated delivery times are provided at checkout but are not guaranteed. Title and risk of loss pass to you upon delivery to the carrier. For damaged or incorrect items, please contact us within 7 days.</p>
+        <p>UrbanLume offers a 30-day return policy for unused products in original packaging. Custom or limited-edition pieces are final sale. Refunds will be processed within 14 business days after we receive the returned item. Return shipping fees are the responsibility of the buyer unless the product is defective.</p>
+      </div>
+
+      <div class="terms-section" id="intellectual">
+        <h2>4. Intellectual Property</h2>
+        <p>All content on this Site — including but not limited to text, graphics, logos, product images, UI design, and the "UrbanLume" name — is our exclusive property or that of our licensors and is protected by copyright, trademark, and other intellectual property laws. You may not reproduce, distribute, or create derivative works without our explicit written permission. Unauthorized use may result in legal action.</p>
+      </div>
+
+      <div class="terms-section" id="user-conduct">
+        <h2>5. User Conduct & Prohibited Uses</h2>
+        <p>You agree not to use the Site for any unlawful purpose or to violate any applicable laws. You must not attempt to interfere with the security or functionality of the Site, introduce malware, or collect user information without consent. Any violation may result in immediate termination of your access.</p>
+      </div>
+
+      <div class="terms-section" id="warranty">
+        <h2>6. Warranty & Limitation of Liability</h2>
+        <p>UrbanLume luminaires come with a 2-year limited warranty against manufacturing defects. This warranty does not cover bulbs, normal wear, or damage from misuse. TO THE MAXIMUM EXTENT PERMITTED BY LAW, URBANLUME SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, OR CONSEQUENTIAL DAMAGES ARISING FROM THE USE OR INABILITY TO USE OUR PRODUCTS OR SITE. OUR TOTAL LIABILITY SHALL NOT EXCEED THE AMOUNT YOU PAID FOR THE RELEVANT PRODUCT.</p>
+      </div>
+
+      <div class="terms-section" id="privacy">
+        <h2>7. Privacy & Data Collection</h2>
+        <p>Your use of the Site is also governed by our Privacy Policy. We collect personal information such as name, email, shipping address, and payment details to process orders and improve your experience. We do not sell your personal data to third parties. For more details, review our full Privacy Policy (available upon request or linked in the footer).</p>
+      </div>
+
+      <div class="terms-section" id="governing-law">
+        <h2>8. Governing Law & Disputes</h2>
+        <p>These Terms shall be governed by and construed in accordance with the laws of the State of New York, without regard to conflict-of-law principles. Any dispute arising from these Terms or your use of the Site shall be resolved exclusively through binding arbitration in New York County, unless otherwise required by law. Both parties waive the right to a jury trial or to participate in a class action.</p>
+      </div>
+
+      <div class="terms-section" id="changes">
+        <h2>9. Modifications & Severability</h2>
+        <p>We reserve the right to modify or discontinue any part of the Site or these Terms at any time. If any provision of these Terms is found to be unenforceable, the remaining provisions will remain in full force and effect. Our failure to enforce any right or provision does not constitute a waiver of such right.</p>
+      </div>
+
+      <div class="terms-section" id="contact">
+        <h2>10. Contact Information</h2>
+        <p>For any questions regarding these Terms of Service, product inquiries, or legal matters, please reach out to us:</p>
+        <p>📧 legal@urbanlume.co<br>📍 UrbanLume Studio — 123 Luminous Lane, Brooklyn, NY 11201<br>📞 +1 (800) 555-LUME</p>
+      </div>
+
+      <hr>
+      <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; align-items: center;">
+        <a href="javascript:void(0)" class="back-home" id="backToHomeBtn">← Back to Homepage</a>
+        <p style="font-size: 0.8rem; color: #8f9aab;">By using UrbanLume, you confirm that you have read and accepted these Terms.</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>UrbanLume</h4>
+        <p>Luminous objects for<br>conscious interiors.</p>
+      </div>
+      <div class="footer-col">
+        
+    </div>
+    <div class="copyright">
+      <span>✨ UrbanLume — Legal agreement. All information provided is for illustrative purposes. This is a fictional brand showcase.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function() {
+    // ensure cart counter from hypothetical previous context, but minimal for consistency
+    let cartCount = 0;
+    const cartIcon = document.querySelector('.cart-icon');
+    if(cartIcon) {
+      cartIcon.innerHTML = `🛒 Cart (${cartCount})`;
+    }
+    
+    // simple navigation simulation for demo (non-breaking)
+    const shopLink = document.getElementById('shopLink');
+    const collectionsLink = document.getElementById('collectionsLink');
+    const studioLink = document.getElementById('studioLink');
+    const backBtn = document.getElementById('backToHomeBtn');
+    const termsFooterLink = document.getElementById('termsFooterLink');
+
+    function redirectToHomepage() {
+      // since in real world it would be index.html, we just reload or simulate.
+      // In this snippet, we can show an alert and stay, but for usability: provide link to main homepage concept.
+      if(window.location.pathname.includes('terms') || window.location.pathname.includes('terms.html')) {
+        window.location.href = './index.html'; 
+      } else {
+        alert('🔆 UrbanLume: you are already on the terms page. To go to the full homepage, please click the logo or use the back button.');
+      }
+    }
+
+    if(backBtn) {
+      backBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        redirectToHomepage();
+      });
+    }
+    if(shopLink) {
+      shopLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        alert('✨ Explore our lighting collections. (Full shop integration coming soon — placeholder interaction)');
+      });
+    }
+    if(collectionsLink) {
+      collectionsLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        alert('🌟 Discover limited drops & signature series. (Demo navigation)');
+      });
+    }
+    if(studioLink) {
+      studioLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        alert('🏛️ The UrbanLume Studio — handcrafted and sustainable design. (Demo version)');
+      });
+    }
+    if(termsFooterLink) {
+      termsFooterLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+    // optional logo click
+    const logo = document.querySelector('.logo h1');
+    if(logo) {
+      logo.style.cursor = 'pointer';
+      logo.addEventListener('click', () => redirectToHomepage());
+    }
+
+    // sticky hash navigation + minor anchor handling
+    if(window.location.hash) {
+      const id = window.location.hash.substring(1);
+      const element = document.getElementById(id);
+      if(element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      }
+    }
+
+    // add copy year dynamic
+    const copyrightSpan = document.querySelector('.copyright span');
+    if(copyrightSpan) {
+      const year = new Date().getFullYear();
+      if(!copyrightSpan.innerText.includes('2026')) {
+        copyrightSpan.innerText = copyrightSpan.innerText.replace('2026', year);
+      }
+    }
+  })();
+</script>
+</body>
+</html>

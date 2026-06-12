@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>UrbanLume · Privacy Policy | Your data matters</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, 'Segoe UI', 'Inter', -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+      background: #fefcf7;
+      color: #1e1e2a;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* header - matching brand identity */
+    .site-header {
+      background: #ffffffea;
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #e9e7e0;
+      padding: 18px 0;
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .logo h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      background: linear-gradient(135deg, #2C3E4E, #D4AF37);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      cursor: pointer;
+    }
+
+    .logo span {
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: #6c757d;
+      display: block;
+      background: none;
+      -webkit-background-clip: unset;
+      color: #5a626e;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #2d3e50;
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #d4af37;
+    }
+
+    /* privacy hero section */
+    .privacy-hero {
+      background: linear-gradient(125deg, #f3efe8 0%, #ffffff 100%);
+      border-radius: 48px;
+      margin: 40px 0 32px 0;
+      padding: 48px 48px;
+      text-align: center;
+    }
+
+    .privacy-hero h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #2c3e4e;
+      margin-bottom: 16px;
+    }
+
+    .privacy-hero p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+      color: #4a5b6e;
+    }
+
+    .effective-date {
+      margin-top: 20px;
+      font-size: 0.85rem;
+      background: #e9e2d4;
+      display: inline-block;
+      padding: 6px 18px;
+      border-radius: 60px;
+      color: #2c3e4e;
+    }
+
+    /* main privacy card */
+    .privacy-card {
+      background: white;
+      border-radius: 40px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.04);
+      padding: 48px 52px;
+      margin: 24px 0 64px;
+      border: 1px solid #f0ece3;
+    }
+
+    .privacy-section {
+      margin-bottom: 44px;
+      scroll-margin-top: 100px;
+    }
+
+    .privacy-section h2 {
+      font-size: 1.7rem;
+      font-weight: 600;
+      margin-bottom: 18px;
+      color: #2c3e4e;
+      border-left: 5px solid #d4af37;
+      padding-left: 18px;
+    }
+
+    .privacy-section h3 {
+      font-size: 1.2rem;
+      margin: 24px 0 12px 0;
+      font-weight: 600;
+      color: #3e4c5c;
+    }
+
+    .privacy-section p, .privacy-section li {
+      color: #2d3a48;
+      margin-bottom: 14px;
+      line-height: 1.65;
+    }
+
+    .privacy-section ul, .privacy-section ol {
+      margin: 12px 0 16px 32px;
+    }
+
+    .privacy-section li {
+      margin-bottom: 8px;
+    }
+
+    hr {
+      margin: 36px 0;
+      border: 0;
+      height: 1px;
+      background: linear-gradient(90deg, #e0d9cd, transparent);
+    }
+
+    .back-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #f4f1ea;
+      padding: 12px 28px;
+      border-radius: 60px;
+      text-decoration: none;
+      color: #2c3e4e;
+      font-weight: 500;
+      transition: 0.2s;
+      margin-top: 20px;
+    }
+
+    .back-home:hover {
+      background: #e9e2d4;
+      gap: 16px;
+    }
+
+    .highlight-badge {
+      background: #f9f5eb;
+      padding: 4px 14px;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      color: #b8860b;
+      display: inline-block;
+      margin-left: 12px;
+      vertical-align: middle;
+    }
+
+    /* footer */
+    .site-footer {
+      border-top: 1px solid #e9e2d4;
+      padding: 48px 0 32px;
+      margin-top: 24px;
+      background: #fefaf4;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+    }
+
+    .footer-col h4 {
+      margin-bottom: 18px;
+      font-weight: 600;
+    }
+
+    .footer-col p, .footer-col a {
+      color: #5f6c7a;
+      text-decoration: none;
+      line-height: 1.8;
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 48px;
+      color: #7c7f85;
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 780px) {
+      .privacy-card {
+        padding: 32px 24px;
+      }
+      .privacy-hero h1 {
+        font-size: 2rem;
+      }
+      .privacy-hero {
+        padding: 32px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">
+      <h1>UrbanLume<span> · luminous living</span></h1>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="about.html">About Us</a>
+      <a href="#" class="cart-icon" style="background:#f5f2eb; padding:8px 16px; border-radius:40px;">🛒 Cart (0)</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <!-- Privacy hero section -->
+    <div class="privacy-hero">
+      <h1>Privacy Policy</h1>
+      <p>Your trust is our brightest light. At UrbanLume, we are committed to protecting your personal data and being transparent about how we collect, use, and safeguard your information.</p>
+      <div class="effective-date">🔒 Effective date: June 12, 2026</div>
+    </div>
+
+    <!-- Main privacy content block -->
+    <div class="privacy-card">
+      <div class="privacy-section" id="intro">
+        <h2>1. Overview & Scope</h2>
+        <p>UrbanLume ("we", "us", "our", "the Studio") respects your privacy. This Privacy Policy explains how we collect, process, and protect your personal information when you visit our website (<strong>urbanlume.co</strong>), make a purchase, subscribe to our newsletter, or interact with our services. By using UrbanLume, you consent to the practices described in this policy.</p>
+      </div>
+
+      <div class="privacy-section" id="collection">
+        <h2>2. Information We Collect</h2>
+        <p>We collect different types of information to provide and improve our luminous experience:</p>
+        <h3>✦ Personal Information You Provide</h3>
+        <ul>
+          <li><strong>Account & Order Details:</strong> Name, email address, billing/shipping address, phone number, and payment information (processed via secure PCI-compliant gateways).</li>
+          <li><strong>Communications:</strong> Messages you send to our support team, product inquiries, or feedback.</li>
+          <li><strong>Newsletter Signups:</strong> Email address and preferences regarding lighting inspiration.</li>
+        </ul>
+        <h3>✦ Automatically Collected Data</h3>
+        <ul>
+          <li><strong>Device & Usage Info:</strong> IP address, browser type, operating system, referring URLs, and pages viewed.</li>
+          <li><strong>Cookies & Tracking:</strong> We use essential and analytical cookies to enhance site performance and understand user behavior (see Section 6).</li>
+        </ul>
+      </div>
+
+      <div class="privacy-section" id="usage">
+        <h2>3. How We Use Your Information</h2>
+        <p>UrbanLume uses your data for legitimate business purposes, including:</p>
+        <ul>
+          <li>✅ Processing and fulfilling orders, returns, and exchanges.</li>
+          <li>✅ Sending order confirmations, shipping updates, and customer service communications.</li>
+          <li>✅ Improving our website, product design, and personalized recommendations.</li>
+          <li>✅ Marketing communications (only with your explicit consent, e.g., newsletters, early access).</li>
+          <li>✅ Detecting fraudulent activity and ensuring the security of our services.</li>
+        </ul>
+        <p>We never sell your personal information to third parties. We only share data with trusted partners (e.g., shipping carriers, payment processors) who are bound by strict confidentiality agreements.</p>
+      </div>
+
+      <div class="privacy-section" id="sharing">
+        <h2>4. Data Sharing & Third Parties</h2>
+        <p>We may share limited information in the following scenarios:</p>
+        <ul>
+          <li><strong>Service Providers:</strong> Logistics (e.g., FedEx, DHL), payment gateways (Stripe, PayPal), email marketing platforms (Klaviyo). These parties are prohibited from using your data for any other purpose.</li>
+          <li><strong>Legal Compliance:</strong> If required by law, court order, or to protect the rights, property, or safety of UrbanLume, our customers, or others.</li>
+          <li><strong>Business Transfers:</strong> In the event of a merger, acquisition, or asset sale, your information may be transferred as part of the transaction.</li>
+        </ul>
+        <p>We do not share your personal data with advertisers or data brokers.</p>
+      </div>
+
+      <div class="privacy-section" id="cookies">
+        <h2>5. Cookies & Tracking Technologies</h2>
+        <p>UrbanLume uses cookies to enhance user experience, analyze site traffic, and remember your preferences. You can control cookies through your browser settings. Essential cookies cannot be disabled as they are necessary for core functionality (cart, checkout). Third-party analytics (Google Analytics) help us understand how visitors engage with our site — these services have their own privacy policies.</p>
+        <p>🔧 <strong>Your choices:</strong> Most browsers allow you to block or delete cookies. However, doing so may affect certain features like saved carts or wishlists.</p>
+      </div>
+
+      <div class="privacy-section" id="rights">
+        <h2>6. Your Privacy Rights</h2>
+        <p>Depending on your location (e.g., GDPR for EU residents, CCPA for California residents), you may have the following rights:</p>
+        <ul>
+          <li>🔹 <strong>Access:</strong> Request a copy of the personal data we hold about you.</li>
+          <li>🔹 <strong>Correction:</strong> Update inaccurate or incomplete information.</li>
+          <li>🔹 <strong>Deletion:</strong> Request deletion of your data (subject to legal obligations like transaction records).</li>
+          <li>🔹 <strong>Opt-out of marketing:</strong> Click "unsubscribe" in any promotional email or contact us directly.</li>
+          <li>🔹 <strong>Data portability:</strong> Receive your data in a structured, machine-readable format.</li>
+        </ul>
+        <p>To exercise your rights, contact our privacy team at <strong>privacy@urbanlume.co</strong>. We will respond within 30 days. No fee will be charged unless the request is excessive or repetitive.</p>
+      </div>
+
+      <div class="privacy-section" id="security">
+        <h2>7. Data Security & Retention</h2>
+        <p>We implement industry-standard security measures, including SSL encryption, firewalls, and restricted access to personal data. Payment information is tokenized and never stored directly on our servers. However, no method of transmission over the Internet is 100% secure; we cannot guarantee absolute security.</p>
+        <p>We retain your personal information only as long as necessary for the purposes outlined in this policy — generally, for the duration of your customer relationship plus 7 years for tax/legal compliance. After that, data is anonymized or deleted.</p>
+      </div>
+
+      <div class="privacy-section" id="children">
+        <h2>8. Children's Privacy</h2>
+        <p>UrbanLume does not knowingly collect personal information from children under the age of 16. If you believe a child has provided us with data, please contact us immediately, and we will take steps to delete such information.</p>
+      </div>
+
+      <div class="privacy-section" id="international">
+        <h2>9. International Data Transfers</h2>
+        <p>Our servers are located in the United States. If you are accessing UrbanLume from outside the US, please be aware that your information may be transferred to, stored, and processed in the US where our data protection laws may differ from those in your jurisdiction. By using our services, you consent to this transfer.</p>
+      </div>
+
+      <div class="privacy-section" id="changes-policy">
+        <h2>10. Changes to This Privacy Policy</h2>
+        <p>We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements. The "Effective date" at the top of this page indicates when the latest version was published. We encourage you to review this page periodically. Your continued use of UrbanLume after any modifications signifies acceptance of the updated policy.</p>
+      </div>
+
+      <div class="privacy-section" id="contact-privacy">
+        <h2>11. Contact Us</h2>
+        <p>If you have any questions, concerns, or data requests regarding this Privacy Policy or our data handling practices, please reach out to our Data Protection Officer:</p>
+        <p>📧 <strong>privacy@urbanlume.co</strong><br>
+        📍 UrbanLume Privacy Office — 123 Luminous Lane, Brooklyn, NY 11201<br>
+        📞 +1 (800) 555-LUME (5863)</p>
+        <p>For general inquiries: <strong>hello@urbanlume.co</strong></p>
+      </div>
+
+      <hr>
+      <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; align-items: center;">
+        <a href="javascript:void(0)" class="back-home" id="backToHomeBtn">← Back to Homepage</a>
+        <p style="font-size: 0.8rem; color: #8f9aab;">✨ UrbanLume — illuminating trust, protecting your glow.</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>UrbanLume</h4>
+        <p>Luminous objects for<br>conscious interiors.</p>
+      </div>
+      <div class="footer-col">
+        
+    </div>
+    <div class="copyright">
+      <span>🔒 UrbanLume — Your privacy is sacred. This policy reflects our commitment to data protection and transparency.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function() {
+    // Cart placeholder (non-intrusive)
+    let cartCount = 0;
+    const cartIcon = document.querySelector('.cart-icon');
+    if(cartIcon) cartIcon.innerHTML = `🛒 Cart (${cartCount})`;
+
+    // Helper function to redirect to homepage (assuming index.html in same directory)
+    function goToHomepage() {
+      // If we are on a subpage, redirect to root or index.
+      if (window.location.pathname.includes('privacy') || window.location.pathname.includes('terms')) {
+        window.location.href = './index.html';
+      } else {
+        alert('✨ UrbanLume — Redirecting to the luminous homepage.');
+        window.location.href = './index.html';
+      }
+    }
+
+    // Navigation demo interactions & linking
+    const shopBtn = document.getElementById('shopNav');
+    const collectionsBtn = document.getElementById('collectionsNav');
+    const studioBtn = document.getElementById('studioNav');
+    const backHomeBtn = document.getElementById('backToHomeBtn');
+    const privacyFooterLink = document.getElementById('privacyFooterLink');
+    const termsFooterRedirect = document.getElementById('termsFooterRedirect');
+    const logo = document.querySelector('.logo h1');
+
+    if (backHomeBtn) backHomeBtn.addEventListener('click', (e) => { e.preventDefault(); goToHomepage(); });
+    if (logo) logo.addEventListener('click', () => goToHomepage());
+    
+    if (shopBtn) {
+      shopBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        alert('🌟 Explore our signature luminaires. (Demo — full shop coming soon)');
+      });
+    }
+    if (collectionsBtn) {
+      collectionsBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        alert('🪔 Discover limited drops & seasonal collections at UrbanLume.');
+      });
+    }
+    if (studioBtn) {
+      studioBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        alert('🏛️ The UrbanLume Studio — where craft meets light.');
+      });
+    }
+    if (privacyFooterLink) {
+      privacyFooterLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+    if (termsFooterRedirect) {
+      termsFooterRedirect.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.location.href = './terms.html';
+      });
+    }
+
+    // smooth scroll for hash links (if any)
+    if (window.location.hash) {
+      const targetId = window.location.hash.substring(1);
+      const element = document.getElementById(targetId);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      }
+    }
+
+    // dynamic year in footer if needed
+    const copyrightSpan = document.querySelector('.copyright span');
+    if (copyrightSpan && copyrightSpan.innerText.includes('2026')) {
+      const currentYear = new Date().getFullYear();
+      if (currentYear !== 2026) {
+        copyrightSpan.innerText = copyrightSpan.innerText.replace('2026', currentYear);
+      }
+    }
+  })();
+</script>
+</body>
+</html>

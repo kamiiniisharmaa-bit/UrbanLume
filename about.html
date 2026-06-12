@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>UrbanLume · About Us | Craft, Light & Consciousness</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, 'Segoe UI', 'Inter', -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+      background: #fefcf7;
+      color: #1e1e2a;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* header - identical to brand style */
+    .site-header {
+      background: #ffffffea;
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #e9e7e0;
+      padding: 18px 0;
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .logo h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      background: linear-gradient(135deg, #2C3E4E, #D4AF37);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      cursor: pointer;
+    }
+
+    .logo span {
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: #6c757d;
+      display: block;
+      background: none;
+      -webkit-background-clip: unset;
+      color: #5a626e;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #2d3e50;
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #d4af37;
+    }
+
+    /* about hero section */
+    .about-hero {
+      background: linear-gradient(105deg, #ede8dd 0%, #fefaf2 100%);
+      border-radius: 48px;
+      margin: 40px 0 48px 0;
+      padding: 56px 48px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 48px;
+    }
+
+    .hero-text {
+      flex: 1.2;
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: -1px;
+      color: #2c3e4e;
+      margin-bottom: 24px;
+    }
+
+    .hero-text .tagline {
+      font-size: 1.25rem;
+      color: #b8860b;
+      font-weight: 500;
+      margin-bottom: 18px;
+      letter-spacing: -0.2px;
+    }
+
+    .hero-text p {
+      font-size: 1.1rem;
+      color: #3e4a5b;
+      line-height: 1.5;
+      margin-bottom: 28px;
+    }
+
+    .hero-image {
+      flex: 1;
+      min-height: 320px;
+      border-radius: 32px;
+      background-image: url('https://picsum.photos/id/106/600/450');
+      background-size: cover;
+      background-position: center 40%;
+      box-shadow: 0 20px 30px -12px rgba(0,0,0,0.1);
+    }
+
+    /* mission block */
+    .mission-block {
+      background: white;
+      border-radius: 48px;
+      padding: 56px 48px;
+      margin: 32px 0 56px;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.02);
+      border: 1px solid #f0ece3;
+    }
+
+    .mission-block h2 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+      color: #2c3e4e;
+    }
+
+    .mission-quote {
+      font-size: 1.4rem;
+      font-style: italic;
+      max-width: 800px;
+      margin: 0 auto 24px;
+      color: #3e5a6b;
+      font-weight: 450;
+    }
+
+    .mission-stats {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 48px;
+      margin-top: 48px;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: #d4af37;
+    }
+
+    /* story columns */
+    .story-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 48px;
+      margin: 56px 0;
+      align-items: center;
+    }
+
+    .story-text-col {
+      flex: 1.2;
+    }
+
+    .story-text-col h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      border-left: 5px solid #d4af37;
+      padding-left: 20px;
+    }
+
+    .story-text-col p {
+      margin-bottom: 20px;
+      color: #2d3a48;
+    }
+
+    .story-img-col {
+      flex: 1;
+      min-height: 320px;
+      border-radius: 32px;
+      background-image: url('https://picsum.photos/id/29/600/450');
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* values section */
+    .values-section {
+      margin: 64px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .section-header h2 {
+      font-size: 2.2rem;
+      color: #2c3e4e;
+    }
+
+    .section-header p {
+      color: #5f6c7a;
+      max-width: 600px;
+      margin: 12px auto 0;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 32px;
+    }
+
+    .value-card {
+      background: white;
+      border-radius: 32px;
+      padding: 32px 24px;
+      text-align: center;
+      transition: 0.25s;
+      border: 1px solid #efeae2;
+    }
+
+    .value-icon {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .value-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+    }
+
+    /* team section */
+    .team-section {
+      margin: 64px 0 48px;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      margin-top: 32px;
+    }
+
+    .team-member {
+      text-align: center;
+    }
+
+    .member-img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background-color: #e2d9ce;
+      margin: 0 auto 20px;
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    }
+
+    .team-member h4 {
+      font-size: 1.3rem;
+      margin-bottom: 5px;
+    }
+
+    /* sustainability banner */
+    .sustainability-banner {
+      background: #2c3e4e;
+      border-radius: 48px;
+      padding: 56px 48px;
+      margin: 48px 0 64px;
+      color: white;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .sustain-text {
+      flex: 1.5;
+    }
+
+    .sustain-text h3 {
+      font-size: 1.9rem;
+      margin-bottom: 16px;
+    }
+
+    .sustain-badge {
+      background: #d4af37;
+      color: #2c3e4e;
+      display: inline-block;
+      padding: 8px 24px;
+      border-radius: 60px;
+      font-weight: 600;
+      margin-top: 20px;
+    }
+
+    .sustain-img {
+      flex: 1;
+      height: 220px;
+      border-radius: 32px;
+      background-image: url('https://picsum.photos/id/127/500/300');
+      background-size: cover;
+    }
+
+    /* footer */
+    .site-footer {
+      border-top: 1px solid #e9e2d4;
+      padding: 48px 0 32px;
+      margin-top: 24px;
+      background: #fefaf4;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 40px;
+    }
+
+    .footer-col h4 {
+      margin-bottom: 18px;
+      font-weight: 600;
+    }
+
+    .footer-col p, .footer-col a {
+      color: #5f6c7a;
+      text-decoration: none;
+      line-height: 1.8;
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 48px;
+      color: #7c7f85;
+      font-size: 0.8rem;
+    }
+
+    .back-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #f4f1ea;
+      padding: 12px 28px;
+      border-radius: 60px;
+      text-decoration: none;
+      color: #2c3e4e;
+      font-weight: 500;
+      transition: 0.2s;
+      margin: 20px 0 0;
+    }
+
+    @media (max-width: 780px) {
+      .about-hero, .mission-block, .sustainability-banner {
+        padding: 32px 24px;
+      }
+      .hero-text h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">
+      <h1>UrbanLume<span> · luminous living</span></h1>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="about.html">About Us</a>
+      <a href="#" class="cart-icon" style="background:#f5f2eb; padding:8px 16px; border-radius:40px;">🛒 Cart (0)</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <!-- About hero section -->
+    <div class="about-hero">
+      <div class="hero-text">
+        <div class="tagline">✨ Since 2019 · Brooklyn Atelier</div>
+        <h1>We sculpt light to inspire connection.</h1>
+        <p>UrbanLume was born from a desire to merge raw craftsmanship with mindful design. Each lamp is a quiet statement — warm, human, and enduring. We believe that the spaces we inhabit deserve objects that carry intention, beauty, and responsibility.</p>
+        <a href="#values" style="background:#d4af37; color:#1e2a32; padding:10px 28px; border-radius:40px; text-decoration:none; font-weight:600; display:inline-block;">Discover our ethos ↓</a>
+      </div>
+      <div class="hero-image" title="UrbanLume studio and craftsmen at work"></div>
+    </div>
+
+    <!-- Mission + numbers -->
+    <div class="mission-block">
+      <h2>Our mission is luminous clarity</h2>
+      <div class="mission-quote">“To craft objects that blend the poetry of light with uncompromising ethics — slow, local, and circular.”</div>
+      <div class="mission-stats">
+        <div class="stat"><div class="stat-number">100%</div><div>Renewable energy in studio</div></div>
+        <div class="stat"><div class="stat-number">12+</div><div>Independent craft partners</div></div>
+        <div class="stat"><div class="stat-number">3K+</div><div>Trees planted since 2022</div></div>
+      </div>
+    </div>
+
+    <!-- Story: who we are -->
+    <div class="story-grid">
+      <div class="story-text-col">
+        <h2>The story behind the glow</h2>
+        <p>UrbanLume started in a small converted garage in Brooklyn, where designer Elena Voss and artisan Liam Zhao began experimenting with reclaimed metals and borosilicate glass. Their vision was radical: create heirloom-quality lighting that never feels cold or industrial. Instead, each piece carries the warmth of human touch and the rhythm of the city that inspires it.</p>
+        <p>Today, our studio works with a collective of ceramicists, glassblowers, and metalworkers — all within a 50-mile radius. We design for longevity, repairability, and emotional resonance. Every UrbanLume lamp is numbered and registered, inviting you to keep it for a lifetime (or pass it forward).</p>
+      </div>
+      <div class="story-img-col" title="Artisan hands shaping a ceramic lamp base"></div>
+    </div>
+
+    <!-- Core values section (anchor) -->
+    <div class="values-section" id="values">
+      <div class="section-header">
+        <h2>Our guiding principles</h2>
+        <p>Four pillars that illuminate every decision we make — from sketch to doorstep.</p>
+      </div>
+      <div class="values-grid">
+        <div class="value-card"><div class="value-icon">🕯️</div><h3>Slow Craft</h3><p>No mass production. Limited batches, hand-finished by artisans who take pride in imperfections that feel alive.</p></div>
+        <div class="value-card"><div class="value-icon">♻️</div><h3>Circular by design</h3><p>Modular components, repair-friendly assemblies, and a take-back program for future regeneration.</p></div>
+        <div class="value-card"><div class="value-icon">🤝</div><h3>Radical transparency</h3><p>We share material origins, carbon footprint data, and fair wage certifications for every collection.</p></div>
+        <div class="value-card"><div class="value-icon">🌿</div><h3>Biophilic ethos</h3><p>Light that mimics natural rhythms — dimmable warmth, glare-free diffusion, and organic forms.</p></div>
+      </div>
+    </div>
+
+    <!-- The faces behind UrbanLume (unique team) -->
+    <div class="team-section">
+      <div class="section-header">
+        <h2>The luminous collective</h2>
+        <p>Designers, makers, and dreamers — our small but mighty team.</p>
+      </div>
+      <div class="team-grid">
+        <div class="team-member"><div class="member-img" style="background-image: url('https://picsum.photos/id/64/200/200');"></div><h4>Elena Voss</h4><p>Creative Director & Founder</p></div>
+        <div class="team-member"><div class="member-img" style="background-image: url('https://picsum.photos/id/91/200/200');"></div><h4>Liam Zhao</h4><p>Head of Craftsmanship</p></div>
+        <div class="team-member"><div class="member-img" style="background-image: url('https://picsum.photos/id/29/200/200');"></div><h4>Samira Okafor</h4><p>Sustainability Lead</p></div>
+        <div class="team-member"><div class="member-img" style="background-image: url('https://picsum.photos/id/26/200/200');"></div><h4>Jonas Park</h4><p>Product Engineer</p></div>
+      </div>
+    </div>
+
+    <!-- sustainability callout -->
+    <div class="sustainability-banner">
+      <div class="sustain-text">
+        <h3>Climate-positive by 2030</h3>
+        <p>Every UrbanLume purchase includes a tree planted through our reforestation partner, Canopy & Roots. Our packaging is 100% plastic-free, and we offset 2x the carbon from every shipment. We’re also transitioning to 100% recycled aluminum for our pendants — coming this fall.</p>
+        <div class="sustain-badge">🌱 B Corp pending · Member 1% for the Planet</div>
+      </div>
+      <div class="sustain-img" title="Forest and sustainability project"></div>
+    </div>
+
+    <!-- Back to home link -->
+    <div style="margin: 20px 0 40px;">
+      <a href="javascript:void(0)" id="backToHomeBtn" class="back-home">← Back to UrbanLume homepage</a>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>UrbanLume</h4>
+        <p>Light · Craft · Consciousness<br>Brooklyn, NY</p>
+      </div>
+      <div class="footer-col">
+        
+    </div>
+    <div class="copyright">
+      <span>✨ UrbanLume — built with intention, crafted with care. This is a fictional brand showcase celebrating sustainable design.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function() {
+    let cartCount = 0;
+    const cartIcon = document.querySelector('.cart-icon');
+    if (cartIcon) cartIcon.innerHTML = `🛒 Cart (${cartCount})`;
+
+    // Helper to go to homepage
+    function goToHomepage() {
+      if (window.location.pathname.includes('about') || window.location.pathname.includes('privacy')) {
+        window.location.href = './index.html';
+      } else {
+        alert('✨ Returning to UrbanLume home.');
+        window.location.href = './index.html';
+      }
+    }
+
+    // Navigation interactions (demo)
+    const shopNav = document.getElementById('shopLink');
+    const collectionsNav = document.getElementById('collectionsLink');
+    const studioNav = document.getElementById('studioLink');
+    const backBtn = document.getElementById('backToHomeBtn');
+    const logo = document.querySelector('.logo h1');
+
+    if (backBtn) backBtn.addEventListener('click', (e) => { e.preventDefault(); goToHomepage(); });
+    if (logo) logo.addEventListener('click', () => goToHomepage());
+
+    if (shopNav) {
+      shopNav.addEventListener('click', (e) => {
+        e.preventDefault();
+        alert('🌟 Explore our curated lighting collections. (Full catalog coming soon)');
+      });
+    }
+    if (collectionsNav) {
+      collectionsNav.addEventListener('click', (e) => {
+        e.preventDefault();
+        alert('🪔 Limited drops & signature series — discover the Solstice Collection.');
+      });
+    }
+    if (studioNav) {
+      studioNav.addEventListener('click', (e) => {
+        e.preventDefault();
+        alert('🏛️ Visit our Brooklyn atelier by appointment. Learn more on our contact page.');
+      });
+    }
+
+    // smooth anchor scroll
+    if (window.location.hash) {
+      const target = window.location.hash.substring(1);
+      const element = document.getElementById(target);
+      if (element) {
+        setTimeout(() => element.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+      }
+    }
+
+    // dynamic year update in footer
+    const yearSpan = document.querySelector('.copyright span');
+    if (yearSpan && yearSpan.innerText.includes('2026')) {
+      const currentYear = new Date().getFullYear();
+      if (currentYear !== 2026) yearSpan.innerText = yearSpan.innerText.replace('2026', currentYear);
+    }
+  })();
+</script>
+</body>
+</html>

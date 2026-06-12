@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>UrbanLume | Modern Lighting E-Commerce</title>
+  <!-- Google Fonts + simple reset -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, 'Segoe UI', 'Inter', -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+      background: #fefcf7;
+      color: #1e1e2a;
+      line-height: 1.4;
+    }
+
+    /* smooth scroll & container */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* header / navigation */
+    .site-header {
+      background: #ffffffea;
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #e9e7e0;
+      padding: 18px 0;
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .logo h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      background: linear-gradient(135deg, #2C3E4E, #D4AF37);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .logo span {
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: #6c757d;
+      letter-spacing: normal;
+      display: block;
+      background: none;
+      background-clip: unset;
+      -webkit-background-clip: unset;
+      color: #5a626e;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #2d3e50;
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #d4af37;
+    }
+
+    .cart-icon {
+      background: #f5f2eb;
+      padding: 8px 16px;
+      border-radius: 40px;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      font-weight: 600;
+    }
+
+    /* hero section with unique image */
+    .hero {
+      margin: 48px 0 56px 0;
+      border-radius: 48px;
+      overflow: hidden;
+      background: #1e2a32;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: flex;
+      flex-wrap: wrap;
+      background: #16222b;
+    }
+
+    .hero-content {
+      flex: 1.2;
+      padding: 56px 40px;
+      color: white;
+      z-index: 2;
+    }
+
+    .hero-content h2 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      opacity: 0.85;
+      margin-bottom: 32px;
+      max-width: 90%;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: #d4af37;
+      color: #1e2a32;
+      padding: 14px 32px;
+      border-radius: 40px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: 0.2s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .btn-primary:hover {
+      background: #c6a229;
+      transform: translateY(-2px);
+    }
+
+    .hero-media {
+      flex: 1;
+      background-image: url('https://picsum.photos/id/80/800/600'); /* peaceful lamp + modern interior vibe */
+      background-size: cover;
+      background-position: center 30%;
+      min-height: 320px;
+    }
+
+    /* category strip (unique brand blocks) */
+    .feature-categories {
+      margin: 40px 0 64px;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 32px;
+      letter-spacing: -0.2px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: #d4af37;
+      border-radius: 4px;
+    }
+
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 28px;
+      margin-top: 20px;
+    }
+
+    .cat-card {
+      background: white;
+      border-radius: 32px;
+      padding: 28px 16px;
+      text-align: center;
+      transition: all 0.25s ease;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+      border: 1px solid #f0ede5;
+    }
+
+    .cat-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 28px -12px rgba(0,0,0,0.1);
+      border-color: #e1d9cd;
+    }
+
+    .cat-img {
+      width: 80px;
+      height: 80px;
+      background: #f9f6ef;
+      border-radius: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 18px;
+      overflow: hidden;
+    }
+
+    .cat-img img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 30px;
+    }
+
+    .cat-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+    }
+
+    /* featured products grid */
+    .products {
+      margin: 64px 0;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 32px;
+      margin-top: 24px;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 32px;
+      overflow: hidden;
+      transition: 0.25s;
+      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.03);
+      border: 1px solid #f1ede5;
+    }
+
+    .product-card:hover {
+      transform: scale(1.01);
+      box-shadow: 0 24px 38px -16px rgba(0,0,0,0.12);
+    }
+
+    .product-img {
+      width: 100%;
+      height: 260px;
+      background: #eae6dd;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.4s;
+    }
+
+    .product-card:hover .product-img img {
+      transform: scale(1.05);
+    }
+
+    .product-info {
+      padding: 20px 20px 24px;
+    }
+
+    .product-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .product-price {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #d4af37;
+      margin: 12px 0;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid #d4af37;
+      padding: 8px 20px;
+      border-radius: 40px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+      color: #2d3e50;
+    }
+
+    .btn-outline:hover {
+      background: #d4af37;
+      color: white;
+      border-color: #d4af37;
+    }
+
+    /* brand story section (unique asset) */
+    .brand-story {
+      background: linear-gradient(105deg, #f6f3ec 0%, #ffffff 100%);
+      border-radius: 48px;
+      padding: 48px 40px;
+      margin: 56px 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .story-text {
+      flex: 1.5;
+    }
+
+    .story-text h3 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .story-text p {
+      color: #3e4a5b;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .story-img {
+      flex: 1;
+      border-radius: 32px;
+      overflow: hidden;
+      min-height: 240px;
+      background-image: url('https://picsum.photos/id/106/500/400');
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* newsletter */
+    .newsletter {
+      background: #2c3e4e;
+      border-radius: 48px;
+      padding: 56px 40px;
+      text-align: center;
+      margin: 48px 0 64px;
+      color: white;
+    }
+
+    .newsletter h3 {
+      font-size: 1.9rem;
+      margin-bottom: 12px;
+    }
+
+    .newsletter p {
+      margin-bottom: 28px;
+      opacity: 0.8;
+    }
+
+    .news-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .news-group input {
+      padding: 14px 20px;
+      border-radius: 60px;
+      border: none;
+      width: 280px;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    .news-group button {
+      background: #d4af37;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 60px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    /* footer */
+    .site-footer {
+      border-top: 1px solid #e9e2d4;
+      padding: 48px 0 32px;
+      margin-top: 24px;
+      background: #fefaf4;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+    }
+
+    .footer-col h4 {
+      margin-bottom: 18px;
+      font-weight: 600;
+    }
+
+    .footer-col p, .footer-col a {
+      color: #5f6c7a;
+      text-decoration: none;
+      line-height: 1.8;
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 48px;
+      color: #7c7f85;
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 780px) {
+      .hero-content h2 {
+        font-size: 2.2rem;
+      }
+      .hero-content {
+        padding: 40px 24px;
+      }
+      .brand-story, .newsletter {
+        padding: 32px 24px;
+      }
+    }
+  </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NTV0NLN2X5"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-NTV0NLN2X5');
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">
+      <h1>UrbanLume<span> · luminous living</span></h1>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="about.html">About Us</a>
+      <a href="#" class="cart-icon">🛒 Cart (0)</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <!-- Hero section with unique image ID 80: lamp interior -->
+    <div class="hero">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <h2>Light that shapes<br>your atmosphere.</h2>
+          <p>Sculptural designs, warm radiance — sustainable luminaires for modern interiors. Discover the new Solstice Collection.</p>
+          <a href="#" class="btn-primary">Shop now →</a>
+        </div>
+        <div class="hero-media" aria-label="Modern lamp interior display"></div>
+      </div>
+    </div>
+
+    <!-- unique category blocks with custom images (picsum + unsplash style but all legal) -->
+    <div class="feature-categories">
+      <h2 class="section-title">Explore by mood</h2>
+      <div class="cat-grid">
+        <div class="cat-card">
+          <div class="cat-img"><img src="https://picsum.photos/id/20/100/100" alt="Minimalist pendant light"></div>
+          <h3>Minimalist</h3>
+          <p>Clean lines & subtle glow</p>
+        </div>
+        <div class="cat-card">
+          <div class="cat-img"><img src="https://picsum.photos/id/26/100/100" alt="Vintage inspired lamp"></div>
+          <h3>Heritage</h3>
+          <p>Brass & opal finishes</p>
+        </div>
+        <div class="cat-card">
+          <div class="cat-img"><img src="https://picsum.photos/id/91/100/100" alt="Smart LED ambient"></div>
+          <h3>BioPhilic</h3>
+          <p>Natural textures</p>
+        </div>
+        <div class="cat-card">
+          <div class="cat-img"><img src="https://picsum.photos/id/169/100/100" alt="Outdoor lantern"></div>
+          <h3>Terrace</h3>
+          <p>Weatherproof glow</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- featured products with high-quality unique names & images -->
+    <div class="products">
+      <h2 class="section-title">Signature luminaires</h2>
+      <div class="product-grid">
+        <!-- Product 1 -->
+        <div class="product-card">
+          <div class="product-img"><img src="https://picsum.photos/id/160/400/300" alt="Aether pendant lamp"></div>
+          <div class="product-info">
+            <div class="product-title">Aether Pendant</div>
+            <div class="product-price">$289</div>
+            <button class="btn-outline">Add to cart</button>
+          </div>
+        </div>
+        <!-- Product 2 - unique -->
+        <div class="product-card">
+          <div class="product-img"><img src="https://picsum.photos/id/42/400/300" alt="Piano floor lamp"></div>
+          <div class="product-info">
+            <div class="product-title">Clerestory Floor</div>
+            <div class="product-price">$479</div>
+            <button class="btn-outline">Add to cart</button>
+          </div>
+        </div>
+        <!-- Product 3 -->
+        <div class="product-card">
+          <div class="product-img"><img src="https://picsum.photos/id/132/400/300" alt="Geometric sconce"></div>
+          <div class="product-info">
+            <div class="product-title">Komorebi Sconce</div>
+            <div class="product-price">$159</div>
+            <button class="btn-outline">Add to cart</button>
+          </div>
+        </div>
+        <!-- Product 4 -->
+        <div class="product-card">
+          <div class="product-img"><img src="https://picsum.photos/id/152/400/300" alt="Clay table lamp"></div>
+          <div class="product-info">
+            <div class="product-title">Terrazzo Table</div>
+            <div class="product-price">$199</div>
+            <button class="btn-outline">Add to cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- brand story with image and unique brand name: UrbanLume Studio -->
+    <div class="brand-story">
+      <div class="story-text">
+        <h3>UrbanLume — born from slow craft</h3>
+        <p>We collaborate with independent ceramicists and glassblowers to create lighting that tells a story. Each piece is assembled by hand in our Brooklyn atelier, using recycled aluminum and biodegradable packaging.</p>
+        <p>Our unique name “UrbanLume” reflects the fusion of metropolitan energy and natural luminosity. From cozy reading corners to grand living spaces, we design light that adapts to your rhythm.</p>
+        <a href="#" style="color:#d4af37; font-weight:600;">Discover the manifesto →</a>
+      </div>
+      <div class="story-img" title="Artisan crafting a lamp in studio"></div>
+    </div>
+
+    <!-- newsletter signup unique zone -->
+    <div class="newsletter">
+      <h3>Illuminate your inbox ✦</h3>
+      <p>Be the first to receive early access to limited drops, and lighting guides.</p>
+      <div class="news-group">
+        <input type="email" placeholder="Your email address">
+        <button>Subscribe →</button>
+      </div>
+      <p style="font-size:0.75rem; margin-top:20px;">No spam, only luminous inspiration.</p>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>UrbanLume</h4>
+        <p>Luminous objects for<br>conscious interiors.</p>
+      </div>
+      <div class="footer-col">
+        
+    </div>
+    <div class="copyright">
+      <span>✨ Designed for harmony — UrbanLume is a registered fictional brand, all images used are from free placeholder libraries (Picsum).</span>
+    </div>
+  </div>
+</footer>
+
+<!-- optional add-to-cart interactive (basic feedback to demonstrate ecom spirit) -->
+<script>
+  (function() {
+    let cartCount = 0;
+    const cartElement = document.querySelector('.cart-icon');
+    const updateCartDisplay = () => {
+      if(cartElement) cartElement.innerHTML = `🛒 Cart (${cartCount})`;
+    };
+    const allAddButtons = document.querySelectorAll('.btn-outline');
+    allAddButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const productCard = btn.closest('.product-card');
+        let productName = '';
+        if(productCard) {
+          const titleEl = productCard.querySelector('.product-title');
+          if(titleEl) productName = titleEl.innerText;
+        }
+        cartCount++;
+        updateCartDisplay();
+        // subtle micro interaction + alert-free but provides toast style
+        const originalText = btn.innerText;
+        btn.innerText = '✓ Added';
+        btn.style.background = '#d4af37';
+        btn.style.color = '#1e2a32';
+        btn.style.borderColor = '#d4af37';
+        setTimeout(() => {
+          btn.innerText = originalText;
+          btn.style.background = 'transparent';
+          btn.style.color = '#2d3e50';
+        }, 1200);
+        if(productName) {
+          console.log(`✨ ${productName} added to your cart. Total items: ${cartCount}`);
+        } else {
+          console.log('Item added to cart');
+        }
+      });
+    });
+    // newsletter demo 
+    const subscribeBtn = document.querySelector('.news-group button');
+    const emailInput = document.querySelector('.news-group input');
+    if(subscribeBtn && emailInput) {
+      subscribeBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const email = emailInput.value.trim();
+        if(email && email.includes('@')) {
+          alert(`Thanks for subscribing! ✨ UrbanLume will send inspiration to ${email}`);
+          emailInput.value = '';
+        } else {
+          alert('Please enter a valid email to receive luminous updates.');
+        }
+      });
+    }
+    // also hero btn just smooth behaviour
+    const heroBtn = document.querySelector('.hero .btn-primary');
+    if(heroBtn) {
+      heroBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.querySelector('.products')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
+  })();
+</script>
+</body>
+</html>
